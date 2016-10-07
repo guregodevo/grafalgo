@@ -1,0 +1,191 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>com.grafalgo</groupId>
+	<artifactId>graph-algo</artifactId>
+	<version>0.0.1-SNAPSHOT</version>
+	<name>${project.artifactId}</name>
+	<description>Distributed graphs processor</description>
+	<inceptionYear>2016</inceptionYear>
+	<licenses>
+		<license>
+			<name>My License</name>
+			<url>http://....</url>
+			<distribution>repo</distribution>
+		</license>
+	</licenses>
+
+	<properties>
+		<maven.compiler.source>1.7</maven.compiler.source>
+		<maven.compiler.target>1.7</maven.compiler.target>
+		<encoding>UTF-8</encoding>
+		<scala.version>2.10.5</scala.version>
+		<scala.compat.version>2.10</scala.compat.version>
+		<scala.io.version>0.4.3</scala.io.version>
+		<spark.version>1.5.1</spark.version>
+		<elasticsearch.version>2.0.0</elasticsearch.version>
+		<es-hadoop.version>2.2.0</es-hadoop.version>
+		<log4j.version>2.4</log4j.version>
+		<jobserver.version>0.6.1</jobserver.version>
+	</properties>
+
+	<dependencies>
+
+		<!-- Scala -->
+		<dependency>
+			<groupId>org.scala-lang</groupId>
+			<artifactId>scala-library</artifactId>
+			<version>${scala.version}</version>
+			<scope>provided</scope>
+		</dependency>
+
+		<!-- Spark -->
+		<dependency>
+			<groupId>org.apache.spark</groupId>
+			<artifactId>spark-core_2.10</artifactId>
+			<version>${spark.version}</version>
+			<scope>provided</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.spark</groupId>
+			<artifactId>spark-graphx_2.10</artifactId>
+			<version>${spark.version}</version>
+			<scope>provided</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.spark</groupId>
+			<artifactId>spark-mllib_2.10</artifactId>
+			<version>${spark.version}</version>
+			<scope>provided</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.elasticsearch</groupId>
+			<artifactId>elasticsearch-spark_2.10</artifactId>
+			<version>${es-hadoop.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>spark.jobserver</groupId>
+			<artifactId>job-server-api_2.10</artifactId>
+			<version>${jobserver.version}</version>
+		</dependency>
+
+		<!-- Logging -->
+		<dependency>
+			<groupId>com.typesafe.scala-logging</groupId>
+			<artifactId>scala-logging-slf4j_2.10</artifactId>
+			<version>2.1.2</version>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.logging.log4j</groupId>
+			<artifactId>log4j-slf4j-impl</artifactId>
+			<version>${log4j.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.logging.log4j</groupId>
+			<artifactId>log4j-api</artifactId>
+			<version>${log4j.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.logging.log4j</groupId>
+			<artifactId>log4j-core</artifactId>
+			<version>${log4j.version}</version>
+		</dependency>
+
+		<!-- Test -->
+		<dependency>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+			<version>4.11</version>
+			<scope>test</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.elasticsearch</groupId>
+			<artifactId>elasticsearch</artifactId>
+			<version>${elasticsearch.version}</version>
+			<scope>test</scope>
+		</dependency>
+		<dependency>
+			<groupId>com.github.jbellis</groupId>
+			<artifactId>jamm</artifactId>
+			<version>0.3.1</version>
+			<scope>test</scope>
+		</dependency>
+	</dependencies>
+	<repositories>
+		<repository>
+			<id>spark-job-server</id>
+			<name>Job Server Bintray</name>
+			<url>https://dl.bintray.com/spark-jobserver/maven</url>
+		</repository>
+	</repositories>
+	<build>
+		<sourceDirectory>src/main/scala</sourceDirectory>
+		<testSourceDirectory>src/test/scala</testSourceDirectory>
+		<plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<configuration>
+					<source>${maven.compiler.source}</source>
+					<target>${maven.compiler.target}</target>
+				</configuration>
+			</plugin>
+			<plugin>
+				<!-- see http://davidb.github.com/scala-maven-plugin -->
+				<groupId>net.alchim31.maven</groupId>
+				<artifactId>scala-maven-plugin</artifactId>
+				<version>3.2.0</version>
+				<executions>
+					<execution>
+						<goals>
+							<goal>compile</goal>
+							<goal>testCompile</goal>
+						</goals>
+						<configuration>
+							<args>
+								<arg>-dependencyfile</arg>
+								<arg>${project.build.directory}/.scala_dependencies</arg>
+							</args>
+						</configuration>
+					</execution>
+				</executions>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-surefire-plugin</artifactId>
+				<version>2.18.1</version>
+				<configuration>
+					<forkCount>1</forkCount>
+					<!-- reuseForks>false</reuseForks -->
+					<argLine>-Xmx1024m -XX:MaxPermSize=256m</argLine>
+					<useFile>true</useFile>
+					<disableXmlReport>false</disableXmlReport>
+					<!-- If you have classpath issue like NoDefClassError,... -->
+					<!-- useManifestOnlyJar>false</useManifestOnlyJar -->
+					<includes>
+						<include>**/*Test.*</include>
+						<include>**/*Suite.*</include>
+					</includes>
+				</configuration>
+			</plugin>
+			<plugin>
+				<artifactId>maven-assembly-plugin</artifactId>
+				<version>2.4</version>
+				<configuration>
+					<descriptors>
+						<descriptor>src/main/assembly/spark-job.xml</descriptor>
+					</descriptors>
+				</configuration>
+				<executions>
+					<execution>
+						<id>make-assembly</id>
+						<phase>package</phase>
+						<goals>
+							<goal>single</goal>
+						</goals>
+					</execution>
+				</executions>
+			</plugin>
+		</plugins>
+	</build>
+</project>

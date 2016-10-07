@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gexf xmlns="http://www.gexf.net/1.2draft" version="1.2">
+<graph mode="static" defaultedgetype="directed">
+ <nodes>
+  <node id="1" label="author1">
+	<attvalues>
+		<attvalue for="NAME" value="author1"/>
+		<attvalue for="ALL-NICK-ACTIVITY-EVER" value="0"/>
+		<attvalue for="NICK-FOLLOWERS" value="0"/>
+		<attvalue for="Urls Sent" value="3"/>
+		<attvalue for="Domains Sent" value="2"/>
+		<attvalue for="Type" value="user"/>
+		<attvalue for="FIRST PUBDATE" value="08/06/2015 12:00"/>
+		<attvalue for="LAST PUBDATE" value="08/06/2015 12:00"/>
+		<attvalue for="DEGREE" value="3"/>
+		<attvalue for="INDEGREE" value="2"/>
+		<attvalue for="OUTDEGREE" value="1"/>
+	</attvalues>
+  </node>
+  <node id="2" label="author2">
+	<attvalues>
+		<attvalue for="NAME" value="author2"/>
+		<attvalue for="ALL-NICK-ACTIVITY-EVER" value="0"/>
+		<attvalue for="NICK-FOLLOWERS" value="0"/>
+		<attvalue for="Urls Sent" value="0"/>
+		<attvalue for="Domains Sent" value="0"/>
+		<attvalue for="Type" value="user"/>
+		<attvalue for="FIRST PUBDATE" value="08/06/2015 12:00"/>
+		<attvalue for="LAST PUBDATE" value="08/06/2015 12:00"/>
+		<attvalue for="DEGREE" value="4"/>
+		<attvalue for="INDEGREE" value="2"/>
+		<attvalue for="OUTDEGREE" value="2"/>
+	</attvalues>
+  </node>
+  <node id="3" label="author3">
+	<attvalues>
+		<attvalue for="NAME" value="author3"/>
+		<attvalue for="ALL-NICK-ACTIVITY-EVER" value="0"/>
+		<attvalue for="NICK-FOLLOWERS" value="0"/>
+		<attvalue for="Urls Sent" value="0"/>
+		<attvalue for="Domains Sent" value="0"/>
+		<attvalue for="Type" value="user"/>
+		<attvalue for="FIRST PUBDATE" value="08/06/2015 12:00"/>
+		<attvalue for="LAST PUBDATE" value="08/06/2015 12:00"/>
+		<attvalue for="DEGREE" value="4"/>
+		<attvalue for="INDEGREE" value="2"/>
+		<attvalue for="OUTDEGREE" value="2"/>
+	</attvalues>
+  </node>
+  <node id="4" label="author4">
+	<attvalues>
+		<attvalue for="NAME" value="author4"/>
+		<attvalue for="ALL-NICK-ACTIVITY-EVER" value="0"/>
+		<attvalue for="NICK-FOLLOWERS" value="0"/>
+		<attvalue for="Urls Sent" value="0"/>
+		<attvalue for="Domains Sent" value="0"/>
+		<attvalue for="Type" value="user"/>
+		<attvalue for="FIRST PUBDATE" value="08/06/2015 12:00"/>
+		<attvalue for="LAST PUBDATE" value="08/06/2015 12:00"/>
+		<attvalue for="DEGREE" value="1"/>
+		<attvalue for="INDEGREE" value="0"/>
+		<attvalue for="OUTDEGREE" value="1"/>
+	</attvalues>
+  </node>
+ </nodes>
+ <edges>
+  <edge source="4" target="3" label="body9 #ht4 #ht5">
+	<attvalues>
+		<attvalue for="LINKS" value="link9"/>
+		<attvalue for="FIRST PUBDATE" value="08/06/2015 12:00"/>
+		<attvalue for="LAST PUBDATE" value="08/06/2015 12:00"/>
+	</attvalues>
+  </edge>
+  <edge source="1" target="2" label="body7 #ht1 #ht4 #ht5">
+	<attvalues>
+		<attvalue for="LINKS" value="link7"/>
+		<attvalue for="FIRST PUBDATE" value="08/06/2015 12:00"/>
+		<attvalue for="LAST PUBDATE" value="08/06/2015 12:00"/>
+	</attvalues>
+  </edge>
+  <edge source="2" target="1" label="body2 #ht1 #ht2 #ht3 #ht4 #ht5,body3 #ht1 #ht2 #ht3 #ht4 #ht5" weight="2">
+	<attvalues>
+		<attvalue for="LINKS" value="link2,link3"/>
+		<attvalue for="FIRST PUBDATE" value="08/06/2015 12:00"/>
+		<attvalue for="LAST PUBDATE" value="08/06/2015 12:00"/>
+	</attvalues>
+  </edge>
+  <edge source="2" target="3" label="body8 #ht4 #ht5">
+	<attvalues>
+		<attvalue for="LINKS" value="link8"/>
+		<attvalue for="FIRST PUBDATE" value="08/06/2015 12:00"/>
+		<attvalue for="LAST PUBDATE" value="08/06/2015 12:00"/>
+	</attvalues>
+  </edge>
+  <edge source="3" target="2" label="body6 #ht1 #ht2">
+	<attvalues>
+		<attvalue for="LINKS" value="link6"/>
+		<attvalue for="FIRST PUBDATE" value="08/06/2015 12:00"/>
+		<attvalue for="LAST PUBDATE" value="08/06/2015 12:00"/>
+	</attvalues>
+  </edge>
+  <edge source="3" target="1" label="body4 #ht1 #ht2 #ht3">
+	<attvalues>
+		<attvalue for="LINKS" value="link4"/>
+		<attvalue for="FIRST PUBDATE" value="08/06/2015 12:00"/>
+		<attvalue for="LAST PUBDATE" value="08/06/2015 12:00"/>
+	</attvalues>
+  </edge>
+ </edges>
+</graph>
+</gexf>
