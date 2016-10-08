@@ -19,7 +19,7 @@ Currently, Grafalgo supports the following analytics:
 
 ## Getting started
 
-** Configure your network conf file
+* Configure your network conf file
 
 ```
 network.type=AuthorNetwork
@@ -29,7 +29,7 @@ network.partition.number=10
 network.sampleData=false
 network.metrics="MODULARITY, EIGENCENTRALITY, WEIGHTEDDEGREES"
 ```
-** Submit your spark job
+* Submit your spark job
 
 ```
 spark-submit --class com.grafalgo.graph.spi.NetworkJobLauncher --master spark://master-1.local:7077 --conf spark.es.nodes=<elastic_search_node>  --conf spark.config.file=./authnetwork.conf --conf spark.eventLog.enabled=false ../my-jar-job.jar
