@@ -11,4 +11,14 @@ Currently, Grafalgo supports the following analytics:
 - Giant Connected Components
 - Giant component
 - Eigen Vector Centrality
+- Ego
+
+
+###### Features
+- Algorithms that scales
+- Grafalgo can supports any kind of graph. Just implement your own custom Graph such as the Author or Ego network. 
+- Can import or export graph from/to JSON, CSV and Gephi format. 
+
+
+
 
