@@ -1,6 +1,6 @@
 # grafalgo
 
-Grafalgo is a graph processor that provides Distributed Graph Analytics (DGA) written for Big graph and run on top of a Spark cluster.
+Grafalgo is a graph processor that provides Distributed Graph Analytics (DGA) written for Big graph on top of a Spark cluster.
 
 Currently, Grafalgo supports the following analytics:
 - Louvain Modularity 
