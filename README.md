@@ -3,7 +3,7 @@
 Grafalgo is a graph processor that provides Distributed Graph Analytics (DGA) written for Big graph and run on top of a Spark cluster.
 
 Currently, Grafalgo supports the following analytics:
-- Louvain Modularity
+- Louvain Modularity ()
 - Page Rank
 - Degree
 - High Betweenness Set Extraction
@@ -14,10 +14,10 @@ Currently, Grafalgo supports the following analytics:
 
 
 ## Features
-- Algorithms that scale
+- Algorithms that *scale*.
 - Grafalgo can support any kind of graph (directed, undirected, bipartite etc..). Just implement your own custom Graph such as the Author or Ego network example. 
-- Graph can be imported and exported in JSON, CSV and even Gephi format.
-- Compatible with Elastic search index. 
+- Graph can be imported and exported in *JSON, CSV and even Gephi format*.
+- Compatible with *Elastic search index*. 
 
 ## Getting started
 
