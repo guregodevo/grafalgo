@@ -9,7 +9,6 @@ Currently, Grafalgo supports the following analytics:
 - Degree
 - High Betweenness Set Extraction
 - Giant Connected Components
-- Giant component
 
 ## Features
 - Algorithms that **scale**.
