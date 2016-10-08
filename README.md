@@ -26,7 +26,7 @@ Currently, Grafalgo supports the following analytics:
 ```
 network.type=AuthorNetwork
 network.connectionString="energyds/energyds;?q=*:*"
-network.outputPath="hdfs://master-1.local:8020/user/trendit/energyds/"
+network.outputPath="hdfs://master-1.local:8020/user/mypath/"
 network.partition.number=10
 network.sampleData=false
 network.metrics="MODULARITY, EIGENCENTRALITY, WEIGHTEDDEGREES"
